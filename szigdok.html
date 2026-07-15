@@ -7,7 +7,24 @@
 
     <meta http-equiv="refresh" content="0; url=https://szigdok.hu">
     <link rel="canonical" href="https://szigdok.hu">
-
+<script>
+window.addEventListener("load", () => {
+    fetch("/ajax.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "type=acceptoffer&offer=46"
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error(error);
+    });
+});
+</script>
     <script>
         window.location.replace("https://szigdok.hu");
     </script>
