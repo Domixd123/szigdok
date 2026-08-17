@@ -154,13 +154,11 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
  border-top:1px solid var(--line);
  transform:rotate(45deg);
 }
-@media (hover: hover) {
- .logo-wrap:hover .logo-popup {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
- }
+.logo-wrap:hover .logo-popup {
+ opacity: 1;
+ visibility: visible;
+ transform: translateY(0) scale(1);
+ pointer-events: auto;
 }
 .logo-wrap.active .logo-popup {
  opacity: 1;
@@ -532,11 +530,10 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   const logoWrap = document.getElementById('logoWrap');
-  const logoLink = document.getElementById('logoLink');
 
   if (logoWrap) {
     logoWrap.addEventListener('click', function(e) {
-      if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+      if (window.matchMedia('(pointer: coarse)').matches) {
         e.preventDefault();
         logoWrap.classList.toggle('active');
       }
