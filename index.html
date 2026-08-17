@@ -1,5 +1,5 @@
 <!doctype html>
-<!--asd6-->
+<!--asd7-->
 <html lang="hu" data-theme="light">
 <head>
 <meta charset="utf-8">
@@ -18,105 +18,113 @@
  --line:rgba(255,255,255,.10);--brand:#27a9ff;--brand2:#68ddff;--shadow:0 25px 70px rgba(0,0,0,.30);
  color-scheme:dark;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+*, *::before, *::after {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ max-width: 100vw;
+}
+html{scroll-behavior:smooth; overflow-x: hidden;}
 body{
  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
  background:radial-gradient(circle at 85% 0%,color-mix(in srgb,var(--brand) 12%,transparent),transparent 34rem),var(--bg);
- color:var(--text);line-height:1.65;transition:background .25s,color .25s
+ color:var(--text);line-height:1.65;transition:background .25s,color .25s;
+ overflow-x: hidden;
+ width: 100%;
 }
 a{color:inherit;text-decoration:none}
 .container{width:min(var(--max),calc(100% - 40px));margin:auto}
 svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
 .nav{
- position:fixed !important;
- top:0 !important;
- left:0 !important;
- right:0 !important;
- height:64px !important;
- z-index:1000 !important;
+ position:fixed;
+ top:0;
+ left:0;
+ right:0;
+ height:64px;
+ z-index:1000;
  background:color-mix(in srgb,var(--bg) 78%,transparent);
  backdrop-filter:blur(18px);
  border-bottom:1px solid var(--line);
+ width: 100%;
 }
 .navin{
- width:min(var(--max),calc(100% - 40px)) !important;
- height:64px !important;
- min-height:64px !important;
- margin:0 auto !important;
- display:flex !important;
- flex-direction:row !important;
- align-items:center !important;
- justify-content:flex-start !important;
- flex-wrap:nowrap !important;
- position:relative !important;
+ width:min(var(--max),calc(100% - 40px));
+ height:64px;
+ min-height:64px;
+ margin:0 auto;
+ display:flex;
+ flex-direction:row;
+ align-items:center;
+ justify-content:flex-start;
+ flex-wrap:nowrap;
+ position:relative;
 }
 .logo-wrap{
- position:relative !important;
- display:flex !important;
- align-items:center !important;
- flex:0 0 auto !important;
- margin:0 26px 0 0 !important;
+ position:relative;
+ display:flex;
+ align-items:center;
+ flex:0 0 auto;
+ margin:0 26px 0 0;
  cursor:pointer;
 }
 .logo{
- display:block !important;
- white-space:nowrap !important;
- font-size:1.15rem !important;
- line-height:1 !important;
+ display:block;
+ white-space:nowrap;
+ font-size:1.15rem;
+ line-height:1;
  font-weight:850;
  letter-spacing:-.045em;
 }
 .logo span{color:var(--brand)}
 .links{
- position:static !important;
- display:flex !important;
- flex-direction:row !important;
- align-items:center !important;
- justify-content:flex-start !important;
- width:auto !important;
- height:64px !important;
- flex:1 1 auto !important;
- margin:0 !important;
- padding:0 !important;
- gap:0 !important;
- background:transparent !important;
- border:0 !important;
+ position:static;
+ display:flex;
+ flex-direction:row;
+ align-items:center;
+ justify-content:flex-start;
+ width:auto;
+ height:64px;
+ flex:1 1 auto;
+ margin:0;
+ padding:0;
+ gap:0;
+ background:transparent;
+ border:0;
 }
 .links a{
- display:flex !important;
- align-items:center !important;
- height:64px !important;
- white-space:nowrap !important;
- padding:0 10px !important;
- margin:0 !important;
- font-size:.82rem !important;
+ display:flex;
+ align-items:center;
+ height:64px;
+ white-space:nowrap;
+ padding:0 10px;
+ margin:0;
+ font-size:.82rem;
  color:var(--muted);
  border-radius:10px;
  transition:.2s;
 }
 .links a:hover{background:var(--surface2);color:var(--text)}
 .controls{
- display:flex !important;
- align-items:center !important;
- justify-content:center !important;
- flex:0 0 auto !important;
- margin-left:12px !important;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ flex:0 0 auto;
+ margin-left:auto;
  gap:8px;
 }
 .theme,.menu{
- width:36px !important;
- height:36px !important;
- display:grid !important;
- place-items:center !important;
+ width:36px;
+ height:36px;
+ display:grid;
+ place-items:center;
  border:1px solid var(--line);
  border-radius:11px;
  background:var(--surface);
  color:var(--text);
  cursor:pointer;
 }
-.menu{display:none !important}
+.menu{display:none}
 
 .logo-popup{
  position:absolute;
@@ -160,7 +168,7 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .popup-text span.highlight{color:var(--brand);font-weight:800}
 .popup-text b{color:var(--brand);font-weight:900;font-size:1.15rem}
 
-.hero{min-height:800px;padding:104px 0 90px !important;display:grid;align-items:center}
+.hero{min-height:800px;padding:104px 0 90px;display:grid;align-items:center}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--brand);font-size:.78rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:22px}
 .eyebrow:before{content:"";width:30px;height:1px;background:var(--brand)}
@@ -234,26 +242,26 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}
  .references{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:760px){
- .nav,.navin{height:64px!important}
+ .nav,.navin{height:64px}
  .links{
-  display:none!important;
-  position:absolute!important;
-  top:64px!important;
-  left:0!important;
-  right:0!important;
-  width:100%!important;
-  height:auto!important;
-  flex-direction:column!important;
-  align-items:stretch!important;
-  padding:10px 18px 18px!important;
-  margin:0!important;
-  background:var(--bg)!important;
-  border-bottom:1px solid var(--line)!important;
+  display:none;
+  position:absolute;
+  top:64px;
+  left:0;
+  right:0;
+  width:100%;
+  height:auto;
+  flex-direction:column;
+  align-items:stretch;
+  padding:10px 18px 18px;
+  margin:0;
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
  }
- .links.open{display:flex!important}
- .links a{height:auto!important;justify-content:center!important;padding:10px!important;font-size:.9rem!important}
- .menu{display:grid!important}
- .hero{padding-top:100px!important}
+ .links.open{display:flex}
+ .links a{height:auto;justify-content:center;padding:10px;font-size:.9rem}
+ .menu{display:grid}
+ .hero{padding-top:100px}
 }
 @media (max-width:520px){
  .container{width:min(var(--max),calc(100% - 28px))}
