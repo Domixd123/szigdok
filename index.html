@@ -154,18 +154,15 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
  border-top:1px solid var(--line);
  transform:rotate(45deg);
 }
-.logo-wrap:hover .logo-popup {
- opacity: 1;
- visibility: visible;
- transform: translateY(0) scale(1);
- pointer-events: auto;
-}
+
+.logo-wrap:hover .logo-popup,
 .logo-wrap.active .logo-popup {
  opacity: 1;
  visibility: visible;
  transform: translateY(0) scale(1);
  pointer-events: auto;
 }
+
 .popup-title{font-size:1.05rem;font-weight:850;color:var(--text);margin-bottom:8px}
 .popup-line{height:1px;background:var(--line);margin-bottom:12px}
 .popup-text{color:var(--text);font-size:1.05rem;line-height:1.8}
@@ -285,7 +282,7 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}
   <div class="container navin">
     <div class="logo-wrap" id="logoWrap">
       <a class="logo" href="#home" id="logoLink">SolRix<span>IS</span></a>
-      <div class="logo-popup">
+      <div class="logo-popup" id="logoPopup">
         <div class="popup-title">SolRixIS</div>
         <div class="popup-line"></div>
         <div class="popup-text">
@@ -533,7 +530,7 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}
 
   if (logoWrap) {
     logoWrap.addEventListener('click', function(e) {
-      if (window.matchMedia('(pointer: coarse)').matches) {
+      if (!e.target.closest('#logoPopup')) {
         e.preventDefault();
         logoWrap.classList.toggle('active');
       }
