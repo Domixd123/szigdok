@@ -1,4 +1,5 @@
 <!doctype html>
+<!--asd3-->
 <html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -59,14 +60,25 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
 @media(max-width:850px){.links{display:none;position:absolute;top:76px;left:0;right:0;padding:12px 20px 20px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}.links.open{display:flex}.links a{text-align:center}.menu{display:grid}.hero{padding-top:125px}.hero-grid,.contact{grid-template-columns:1fr;gap:40px}.services,.solutions{grid-template-columns:1fr}.hero{min-height:auto}.references{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.container{width:min(var(--max),calc(100% - 28px))}section{padding:75px 0}.hero{padding-top:115px}.visual-card img{height:280px}.references,.partners{grid-template-columns:1fr}.footer-in{align-items:flex-start;flex-direction:column}}
 
-.logo-wrap{position:relative;display:inline-block}.logo-popup{position:absolute;top:calc(100% + 14px);left:0;width:250px;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.97);transition:.2s ease;pointer-events:none;z-index:200}.logo-popup:before{content:"";position:absolute;top:-7px;left:24px;width:13px;height:13px;background:var(--surface);border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}.logo-wrap:hover .logo-popup{opacity:1;visibility:visible;transform:translateY(0) scale(1)}.popup-title{font-size:1.05rem;font-weight:850;color:var(--text);margin-bottom:8px}.popup-line{height:1px;background:var(--line);margin-bottom:12px}
+.logo-wrap{position:relative;display:inline-block}.logo-popup{position:absolute;top:calc(100% + 14px);left:0;width:250px;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.97);transition:.2s ease;pointer-events:none;z-index:200}.logo-popup:before{content:"";position:absolute;top:-7px;left:24px;width:13px;height:13px;background:var(--surface);border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
 
-/* POPUP SZÖVEG & OLVASHATÓSÁG */
+
+.logo-wrap:hover .logo-popup,
+.logo-wrap.active .logo-popup {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.popup-title{font-size:1.05rem;font-weight:850;color:var(--text);margin-bottom:8px}.popup-line{height:1px;background:var(--line);margin-bottom:12px}
+
+
 .popup-text{color:var(--text);font-size:1.05rem;line-height:1.8}
 .popup-text span.highlight{color:var(--brand);font-weight:800}
 .popup-text b{color:var(--brand);font-weight:900;font-size:1.15rem}
 
-/* NAVBAR FIX */
+
 .navin{
   height:76px;
   display:flex;
@@ -115,7 +127,6 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
   .hero{padding-top:115px}
 }
 
-/* FINAL NAVBAR ALIGNMENT */
 .nav{
   height:72px;
 }
@@ -189,7 +200,6 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
   .hero{padding-top:105px !important}
 }
 
-/* COMPACT ONE-LINE HEADER */
 .nav{height:64px}
 .navin{
   height:64px !important;
@@ -270,7 +280,6 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
   .hero{padding-top:100px !important}
 }
 
-/* HEADER: EVERYTHING ON ONE ROW */
 .nav{
   position:fixed !important;
   top:0 !important;
@@ -420,7 +429,7 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
 <body>
 <header class="nav">
   <div class="container navin">
-    <div class="logo-wrap">
+    <div class="logo-wrap" id="logoWrap">
       <a class="logo" href="#home">SolRix<span>IS</span></a>
       <div class="logo-popup">
         <div class="popup-title">SolRixIS</div>
@@ -520,6 +529,27 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
  const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+ // LOGO POPUP MOBIL KLIKK/TOCC KEZELÉS
+ const logoWrap = document.getElementById('logoWrap');
+ if (logoWrap) {
+   logoWrap.addEventListener('click', function(e) {
+     if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+       // Érintőképernyő esetén megakadályozzuk az azonnali elnavigálást, ha még nem volt megnyitva a popup
+       if (!logoWrap.classList.contains('active')) {
+         e.preventDefault();
+         logoWrap.classList.add('active');
+       }
+     }
+   });
+
+   // Kattintás kívülre bezárja a popupot
+   document.addEventListener('click', function(e) {
+     if (!logoWrap.contains(e.target)) {
+       logoWrap.classList.remove('active');
+     }
+   });
+ }
 })();
 
 const copyright=document.getElementById('copyright'); if(copyright) copyright.textContent=window.location.hostname.replace(/^www\./,'')+' — All rights reserved';
