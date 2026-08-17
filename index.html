@@ -1,5 +1,5 @@
 <!doctype html>
-<!--asd4-->
+<!--asd5-->
 <html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -31,7 +31,7 @@ backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 .links{display:flex;gap:4px;align-items:center}.links a{color:var(--muted);padding:10px 13px;border-radius:10px;font-size:.9rem;transition:.2s}
 .links a:hover{background:var(--surface2);color:var(--text)}
 .controls{display:flex;align-items:center;gap:8px}.theme,.menu{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--line);border-radius:11px;background:var(--surface);color:var(--text);cursor:pointer}
-.theme .sun{display:none}.menu{display:none}
+.menu{display:none}
 .hero{min-height:800px;padding:150px 0 90px;display:grid;align-items:center}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--brand);font-size:.78rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:22px}
 .eyebrow:before{content:"";width:30px;height:1px;background:var(--brand)}
@@ -62,7 +62,6 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
 
 .logo-wrap{position:relative;display:inline-block}.logo-popup{position:absolute;top:calc(100% + 14px);left:0;width:250px;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.97);transition:.2s ease;pointer-events:none;z-index:200}.logo-popup:before{content:"";position:absolute;top:-7px;left:24px;width:13px;height:13px;background:var(--surface);border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
 
-
 .logo-wrap:hover .logo-popup,
 .logo-wrap.active .logo-popup {
   opacity: 1;
@@ -73,11 +72,9 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
 
 .popup-title{font-size:1.05rem;font-weight:850;color:var(--text);margin-bottom:8px}.popup-line{height:1px;background:var(--line);margin-bottom:12px}
 
-
 .popup-text{color:var(--text);font-size:1.05rem;line-height:1.8}
 .popup-text span.highlight{color:var(--brand);font-weight:800}
 .popup-text b{color:var(--brand);font-weight:900;font-size:1.15rem}
-
 
 .navin{
   height:76px;
@@ -352,6 +349,7 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
   width:36px !important;
   height:36px !important;
   flex:0 0 36px !important;
+  font-size: 1.1rem;
 }
 .menu{display:none !important}
 .hero{padding-top:104px !important}
@@ -520,7 +518,7 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
  const prefers=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
  function setTheme(theme){
    root.setAttribute('data-theme',theme);
-   btn.innerHTML=theme==='dark' ? '<span class="sun">☀</span><span class="moon">☾</span>' : '<span class="sun">☀</span><span class="moon">☾</span>';
+   btn.innerHTML=theme==='dark' ? '☀️' : '☾';
    localStorage.setItem('solrixis-theme',theme);
  }
  setTheme(saved || (prefers?'dark':'light'));
@@ -530,12 +528,10 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
  const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
- // LOGO POPUP MOBIL KLIKK/TOCC KEZELÉS
  const logoWrap = document.getElementById('logoWrap');
  if (logoWrap) {
    logoWrap.addEventListener('click', function(e) {
      if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-       // Érintőképernyő esetén megakadályozzuk az azonnali elnavigálást, ha még nem volt megnyitva a popup
        if (!logoWrap.classList.contains('active')) {
          e.preventDefault();
          logoWrap.classList.add('active');
@@ -543,7 +539,6 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
      }
    });
 
-   // Kattintás kívülre bezárja a popupot
    document.addEventListener('click', function(e) {
      if (!logoWrap.contains(e.target)) {
        logoWrap.classList.remove('active');
