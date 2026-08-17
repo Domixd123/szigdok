@@ -1,11 +1,12 @@
 <!doctype html>
-<!--asd5-->
-<html lang="en" data-theme="light">
+<!--asd6-->
+<html lang="hu" data-theme="light">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="SolRixIS — IT solutions without risk.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="SolRixIS — IT megoldások kockázat nélkül.">
 <title>SolRixIS — IT Solutions Without Risk</title>
-<link rel="icon" href="SolRixIS_files/favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 <style>
 :root{
  --bg:#f5f8fc;--surface:#fff;--surface2:#eef4fa;--text:#0b1727;--muted:#607087;
@@ -19,412 +20,252 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:
-radial-gradient(circle at 85% 0%,color-mix(in srgb,var(--brand) 12%,transparent),transparent 34rem),var(--bg);
-color:var(--text);line-height:1.65;transition:background .25s,color .25s}
-a{color:inherit;text-decoration:none}.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+body{
+ font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+ background:radial-gradient(circle at 85% 0%,color-mix(in srgb,var(--brand) 12%,transparent),transparent 34rem),var(--bg);
+ color:var(--text);line-height:1.65;transition:background .25s,color .25s
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
 svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.nav{position:fixed;inset:0 0 auto;z-index:100;background:color-mix(in srgb,var(--bg) 78%,transparent);
-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-.navin{height:76px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:1.35rem;font-weight:850;letter-spacing:-.045em}.logo span{color:var(--brand)}
-.links{display:flex;gap:4px;align-items:center}.links a{color:var(--muted);padding:10px 13px;border-radius:10px;font-size:.9rem;transition:.2s}
+
+.nav{
+ position:fixed !important;
+ top:0 !important;
+ left:0 !important;
+ right:0 !important;
+ height:64px !important;
+ z-index:1000 !important;
+ background:color-mix(in srgb,var(--bg) 78%,transparent);
+ backdrop-filter:blur(18px);
+ border-bottom:1px solid var(--line);
+}
+.navin{
+ width:min(var(--max),calc(100% - 40px)) !important;
+ height:64px !important;
+ min-height:64px !important;
+ margin:0 auto !important;
+ display:flex !important;
+ flex-direction:row !important;
+ align-items:center !important;
+ justify-content:flex-start !important;
+ flex-wrap:nowrap !important;
+ position:relative !important;
+}
+.logo-wrap{
+ position:relative !important;
+ display:flex !important;
+ align-items:center !important;
+ flex:0 0 auto !important;
+ margin:0 26px 0 0 !important;
+ cursor:pointer;
+}
+.logo{
+ display:block !important;
+ white-space:nowrap !important;
+ font-size:1.15rem !important;
+ line-height:1 !important;
+ font-weight:850;
+ letter-spacing:-.045em;
+}
+.logo span{color:var(--brand)}
+.links{
+ position:static !important;
+ display:flex !important;
+ flex-direction:row !important;
+ align-items:center !important;
+ justify-content:flex-start !important;
+ width:auto !important;
+ height:64px !important;
+ flex:1 1 auto !important;
+ margin:0 !important;
+ padding:0 !important;
+ gap:0 !important;
+ background:transparent !important;
+ border:0 !important;
+}
+.links a{
+ display:flex !important;
+ align-items:center !important;
+ height:64px !important;
+ white-space:nowrap !important;
+ padding:0 10px !important;
+ margin:0 !important;
+ font-size:.82rem !important;
+ color:var(--muted);
+ border-radius:10px;
+ transition:.2s;
+}
 .links a:hover{background:var(--surface2);color:var(--text)}
-.controls{display:flex;align-items:center;gap:8px}.theme,.menu{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--line);border-radius:11px;background:var(--surface);color:var(--text);cursor:pointer}
-.menu{display:none}
-.hero{min-height:800px;padding:150px 0 90px;display:grid;align-items:center}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--brand);font-size:.78rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:22px}
-.eyebrow:before{content:"";width:30px;height:1px;background:var(--brand)}
-h1{font-size:clamp(3.2rem,7vw,6.5rem);line-height:.95;letter-spacing:-.075em}
-h1 span{background:linear-gradient(100deg,var(--text),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:1.1rem;color:var(--muted);max-width:610px;margin:28px 0 34px}.buttons{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 19px;border-radius:12px;font-weight:750;border:1px solid var(--line);transition:.2s}
-.btn svg{width:17px;height:17px}.primary{background:linear-gradient(135deg,var(--brand),#1682df);border-color:transparent;color:#fff;box-shadow:0 14px 40px color-mix(in srgb,var(--brand) 25%,transparent)}
-.primary:hover{transform:translateY(-2px)}.ghost{background:var(--surface)}.ghost:hover{background:var(--surface2)}
-.visual{position:relative}.visual-card{padding:18px;border:1px solid var(--line);border-radius:30px;background:var(--surface);box-shadow:var(--shadow)}
-.visual-card img{height:390px;width:100%;object-fit:contain;background:#f7fbff;border-radius:18px}.visual-meta{display:flex;justify-content:space-between;padding:18px 7px 3px}.visual-meta small{color:var(--muted)}
-.glow{position:absolute;width:190px;height:190px;border-radius:50%;right:-40px;bottom:-40px;background:color-mix(in srgb,var(--brand) 25%,transparent);filter:blur(65px);z-index:-1}
-section{padding:100px 0}.head{max-width:720px;margin-bottom:46px}.kicker{font-size:.78rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--brand);margin-bottom:10px}
-h2{font-size:clamp(2.2rem,4vw,3.5rem);line-height:1.05;letter-spacing:-.055em}.head p{color:var(--muted);margin-top:15px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{min-height:245px;padding:28px;border:1px solid var(--line);border-radius:22px;background:var(--surface);box-shadow:0 8px 30px color-mix(in srgb,var(--text) 5%,transparent);transition:.25s}
-.service:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--brand) 35%,var(--line))}.icon{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;color:var(--brand);background:color-mix(in srgb,var(--brand) 10%,transparent);margin-bottom:22px;font-size:1.2rem}
-.icon svg{width:22px;height:22px}.service h3{font-size:1.13rem;margin-bottom:9px}.service p{font-size:.93rem;color:var(--muted)}
-.solutions{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.solution{overflow:hidden;border:1px solid var(--line);border-radius:22px;background:var(--surface);box-shadow:0 8px 30px color-mix(in srgb,var(--text) 5%,transparent)}
-.solution-top{padding:28px;background:linear-gradient(135deg,color-mix(in srgb,var(--brand) 13%,transparent),transparent);border-bottom:1px solid var(--line)}
-.solution h3{font-size:1.28rem}.solution p{color:var(--muted);font-size:.9rem;margin-top:7px}.features{list-style:none;padding:13px 28px 25px}.features li{padding:11px 0;border-bottom:1px solid var(--line);font-size:.91rem;color:var(--muted)}.features li:last-child{border:0}.features li:before{content:"✓";color:var(--brand);font-weight:800;margin-right:10px}
-.references{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.ref{height:90px;display:grid;place-items:center;padding:15px;border:1px solid var(--line);border-radius:17px;background:#fff;transition:.2s}.ref:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.ref img{max-height:62px;max-width:85%;object-fit:contain}
-.partners{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:780px}.partner{height:105px;display:grid;place-items:center;padding:18px;border:1px solid var(--line);border-radius:18px;background:#fff}.partner img{max-height:70px;max-width:85%;object-fit:contain}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact-card{padding:34px;border:1px solid var(--line);border-radius:24px;background:var(--surface);box-shadow:var(--shadow)}.contact-card p{color:var(--muted);margin:12px 0 24px}.mail{font-size:1.1rem;color:var(--brand);font-weight:750}
-footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.footer-in{display:flex;justify-content:space-between;gap:30px;align-items:center}.tech{display:flex;gap:15px;flex-wrap:wrap;font-size:1.15rem}.copyright{font-size:.83rem}
-.reveal{opacity:0;transform:translateY(18px);transition:.65s ease}.reveal.show{opacity:1;transform:none}
-@media(max-width:850px){.links{display:none;position:absolute;top:76px;left:0;right:0;padding:12px 20px 20px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}.links.open{display:flex}.links a{text-align:center}.menu{display:grid}.hero{padding-top:125px}.hero-grid,.contact{grid-template-columns:1fr;gap:40px}.services,.solutions{grid-template-columns:1fr}.hero{min-height:auto}.references{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.container{width:min(var(--max),calc(100% - 28px))}section{padding:75px 0}.hero{padding-top:115px}.visual-card img{height:280px}.references,.partners{grid-template-columns:1fr}.footer-in{align-items:flex-start;flex-direction:column}}
+.controls{
+ display:flex !important;
+ align-items:center !important;
+ justify-content:center !important;
+ flex:0 0 auto !important;
+ margin-left:12px !important;
+ gap:8px;
+}
+.theme,.menu{
+ width:36px !important;
+ height:36px !important;
+ display:grid !important;
+ place-items:center !important;
+ border:1px solid var(--line);
+ border-radius:11px;
+ background:var(--surface);
+ color:var(--text);
+ cursor:pointer;
+}
+.menu{display:none !important}
 
-.logo-wrap{position:relative;display:inline-block}.logo-popup{position:absolute;top:calc(100% + 14px);left:0;width:250px;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.97);transition:.2s ease;pointer-events:none;z-index:200}.logo-popup:before{content:"";position:absolute;top:-7px;left:24px;width:13px;height:13px;background:var(--surface);border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
-
+.logo-popup{
+ position:absolute;
+ top:calc(100% + 14px);
+ left:0;
+ width:250px;
+ padding:20px;
+ background:var(--surface);
+ border:1px solid var(--line);
+ border-radius:16px;
+ box-shadow:var(--shadow);
+ opacity:0;
+ visibility:hidden;
+ transform:translateY(-8px) scale(.97);
+ transition:.2s ease;
+ pointer-events:none;
+ z-index:200;
+}
+.logo-popup:before{
+ content:"";
+ position:absolute;
+ top:-7px;
+ left:24px;
+ width:13px;
+ height:13px;
+ background:var(--surface);
+ border-left:1px solid var(--line);
+ border-top:1px solid var(--line);
+ transform:rotate(45deg);
+}
 .logo-wrap:hover .logo-popup,
 .logo-wrap.active .logo-popup {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
+ opacity: 1;
+ visibility: visible;
+ transform: translateY(0) scale(1);
+ pointer-events: auto;
 }
-
-.popup-title{font-size:1.05rem;font-weight:850;color:var(--text);margin-bottom:8px}.popup-line{height:1px;background:var(--line);margin-bottom:12px}
-
+.popup-title{font-size:1.05rem;font-weight:850;color:var(--text);margin-bottom:8px}
+.popup-line{height:1px;background:var(--line);margin-bottom:12px}
 .popup-text{color:var(--text);font-size:1.05rem;line-height:1.8}
 .popup-text span.highlight{color:var(--brand);font-weight:800}
 .popup-text b{color:var(--brand);font-weight:900;font-size:1.15rem}
 
-.navin{
-  height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  position:relative;
-  flex-wrap:nowrap;
-}
-.logo-wrap{flex:0 0 auto}
-.links{
-  display:flex;
-  flex:0 0 auto;
-  align-items:center;
-  justify-content:center;
-  gap:4px;
-  margin-left:auto;
-  margin-right:12px;
-}
-.controls{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  flex:0 0 auto;
-}
-.menu{display:none}
-.hero{padding-top:125px}
+.hero{min-height:800px;padding:104px 0 90px !important;display:grid;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--brand);font-size:.78rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:22px}
+.eyebrow:before{content:"";width:30px;height:1px;background:var(--brand)}
+h1{font-size:clamp(3.2rem,7vw,6.5rem);line-height:.95;letter-spacing:-.075em}
+h1 span{background:linear-gradient(100deg,var(--text),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.1rem;color:var(--muted);max-width:610px;margin:28px 0 34px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 19px;border-radius:12px;font-weight:750;border:1px solid var(--line);transition:.2s}
+.btn svg{width:17px;height:17px}
+.primary{background:linear-gradient(135deg,var(--brand),#1682df);border-color:transparent;color:#fff;box-shadow:0 14px 40px color-mix(in srgb,var(--brand) 25%,transparent)}
+.primary:hover{transform:translateY(-2px)}
+.ghost{background:var(--surface)}
+.ghost:hover{background:var(--surface2)}
+.visual{position:relative}
+.visual-card{padding:18px;border:1px solid var(--line);border-radius:30px;background:var(--surface);box-shadow:var(--shadow)}
+.visual-card img, .visual-card .img-placeholder{height:390px;width:100%;object-fit:contain;background:#f7fbff;border-radius:18px;display:flex;align-items:center;justify-content:center}
+.visual-meta{display:flex;justify-content:space-between;padding:18px 7px 3px}
+.visual-meta small{color:var(--muted)}
+.glow{position:absolute;width:190px;height:190px;border-radius:50%;right:-40px;bottom:-40px;background:color-mix(in srgb,var(--brand) 25%,transparent);filter:blur(65px);z-index:-1}
+
+section{padding:100px 0}
+.head{max-width:720px;margin-bottom:46px}
+.kicker{font-size:.78rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--brand);margin-bottom:10px}
+h2{font-size:clamp(2.2rem,4vw,3.5rem);line-height:1.05;letter-spacing:-.055em}
+.head p{color:var(--muted);margin-top:15px}
+
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service{min-height:245px;padding:28px;border:1px solid var(--line);border-radius:22px;background:var(--surface);box-shadow:0 8px 30px color-mix(in srgb,var(--text) 5%,transparent);transition:.25s}
+.service:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--brand) 35%,var(--line))}
+.icon{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;color:var(--brand);background:color-mix(in srgb,var(--brand) 10%,transparent);margin-bottom:22px;font-size:1.2rem}
+.icon svg{width:22px;height:22px}
+.service h3{font-size:1.13rem;margin-bottom:9px}
+.service p{font-size:.93rem;color:var(--muted)}
+
+.solutions{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.solution{overflow:hidden;border:1px solid var(--line);border-radius:22px;background:var(--surface);box-shadow:0 8px 30px color-mix(in srgb,var(--text) 5%,transparent)}
+.solution-top{padding:28px;background:linear-gradient(135deg,color-mix(in srgb,var(--brand) 13%,transparent),transparent);border-bottom:1px solid var(--line)}
+.solution h3{font-size:1.28rem}
+.solution p{color:var(--muted);font-size:.9rem;margin-top:7px}
+.features{list-style:none;padding:13px 28px 25px}
+.features li{padding:11px 0;border-bottom:1px solid var(--line);font-size:.91rem;color:var(--muted)}
+.features li:last-child{border:0}
+.features li:before{content:"✓";color:var(--brand);font-weight:800;margin-right:10px}
+
+.references{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ref{height:90px;display:grid;place-items:center;padding:15px;border:1px solid var(--line);border-radius:17px;background:#fff;transition:.2s;font-weight:700;color:var(--text)}
+.ref:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.ref img{max-height:62px;max-width:85%;object-fit:contain}
+
+.partners{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:780px}
+.partner{height:105px;display:grid;place-items:center;padding:18px;border:1px solid var(--line);border-radius:18px;background:#fff;font-weight:700;color:var(--text)}
+.partner img{max-height:70px;max-width:85%;object-fit:contain}
+
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-card{padding:34px;border:1px solid var(--line);border-radius:24px;background:var(--surface);box-shadow:var(--shadow)}
+.contact-card p{color:var(--muted);margin:12px 0 24px}
+.mail{font-size:1.1rem;color:var(--brand);font-weight:750}
+
+footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}
+.footer-in{display:flex;justify-content:space-between;gap:30px;align-items:center}
+.tech{display:flex;gap:15px;flex-wrap:wrap;font-size:1.15rem}
+.copyright{font-size:.83rem}
+
+.reveal{opacity:0;transform:translateY(18px);transition:.65s ease}
+.reveal.show{opacity:1;transform:none}
 
 @media (max-width:850px){
-  .navin{height:76px;flex-wrap:nowrap}
-  .links{
-    display:none;
-    position:absolute;
-    top:76px;
-    left:0;
-    right:0;
-    margin:0;
-    padding:12px 20px 20px;
-    background:var(--bg);
-    border-bottom:1px solid var(--line);
-    flex-direction:column;
-    align-items:stretch;
-  }
-  .links.open{display:flex}
-  .links a{text-align:center}
-  .menu{display:grid}
-  .hero{padding-top:115px}
+ .hero-grid,.contact{grid-template-columns:1fr;gap:40px}
+ .services,.solutions{grid-template-columns:1fr}
+ .hero{min-height:auto}
+ .references{grid-template-columns:repeat(2,1fr)}
 }
-
-.nav{
-  height:72px;
-}
-.navin{
-  height:72px !important;
-  min-height:72px;
-  display:flex !important;
-  flex-direction:row !important;
-  align-items:center !important;
-  justify-content:space-between !important;
-  flex-wrap:nowrap !important;
-}
-.logo-wrap{
-  display:inline-block !important;
-  flex:0 0 auto !important;
-  margin:0 !important;
-}
-.links{
-  display:flex !important;
-  flex-direction:row !important;
-  align-items:center !important;
-  justify-content:flex-end !important;
-  position:static !important;
-  flex:1 1 auto !important;
-  width:auto !important;
-  margin:0 12px 0 auto !important;
-  padding:0 !important;
-  gap:2px !important;
-  background:transparent !important;
-  border:0 !important;
-}
-.links a{
-  display:block !important;
-  white-space:nowrap !important;
-  padding:8px 12px !important;
-}
-.controls{
-  display:flex !important;
-  flex:0 0 auto !important;
-  flex-direction:row !important;
-  align-items:center !important;
-  gap:8px !important;
-  margin:0 !important;
-}
-.menu{
-  display:none !important;
-}
-.hero{
-  padding-top:120px !important;
-}
-
-@media (max-width:700px){
-  .nav{height:68px}
-  .navin{height:68px !important;min-height:68px}
-  .links{
-    display:none !important;
-    position:absolute !important;
-    top:68px !important;
-    left:0 !important;
-    right:0 !important;
-    flex-direction:column !important;
-    align-items:stretch !important;
-    padding:12px 20px 20px !important;
-    margin:0 !important;
-    background:var(--bg) !important;
-    border-bottom:1px solid var(--line) !important;
-  }
-  .links.open{display:flex !important}
-  .links a{text-align:center !important}
-  .menu{display:grid !important}
-  .hero{padding-top:105px !important}
-}
-
-.nav{height:64px}
-.navin{
-  height:64px !important;
-  min-height:64px !important;
-  display:flex !important;
-  flex-direction:row !important;
-  align-items:center !important;
-  justify-content:flex-start !important;
-  flex-wrap:nowrap !important;
-  gap:0 !important;
-}
-.logo-wrap{
-  display:inline-flex !important;
-  align-items:center !important;
-  flex:0 0 auto !important;
-  margin:0 24px 0 0 !important;
-}
-.logo{
-  font-size:1.15rem !important;
-  line-height:1 !important;
-  white-space:nowrap !important;
-}
-.links{
-  display:flex !important;
-  flex:1 1 auto !important;
-  flex-direction:row !important;
-  align-items:center !important;
-  justify-content:flex-start !important;
-  position:static !important;
-  width:auto !important;
-  margin:0 !important;
-  padding:0 !important;
-  gap:0 !important;
-  background:transparent !important;
-  border:0 !important;
-}
-.links a{
-  display:block !important;
-  white-space:nowrap !important;
-  padding:7px 11px !important;
-  font-size:.82rem !important;
-  line-height:1.2 !important;
-}
-.controls{
-  display:flex !important;
-  align-items:center !important;
-  flex:0 0 auto !important;
-  margin-left:10px !important;
-  gap:6px !important;
-}
-.theme{
-  width:36px !important;
-  height:36px !important;
-  flex:0 0 36px !important;
-}
-.menu{display:none !important}
-.hero{padding-top:105px !important}
-
-@media (max-width:760px){
-  .nav{height:64px}
-  .navin{height:64px !important}
-  .links{
-    display:none !important;
-    position:absolute !important;
-    top:64px !important;
-    left:0 !important;
-    right:0 !important;
-    flex-direction:column !important;
-    align-items:stretch !important;
-    padding:10px 18px 18px !important;
-    margin:0 !important;
-    background:var(--bg) !important;
-    border-bottom:1px solid var(--line) !important;
-  }
-  .links.open{display:flex !important}
-  .links a{text-align:center !important;font-size:.9rem !important}
-  .menu{display:grid !important}
-  .hero{padding-top:100px !important}
-}
-
-.nav{
-  position:fixed !important;
-  top:0 !important;
-  left:0 !important;
-  right:0 !important;
-  height:64px !important;
-  z-index:1000 !important;
-}
-.navin{
-  width:min(var(--max),calc(100% - 40px)) !important;
-  height:64px !important;
-  min-height:64px !important;
-  margin:0 auto !important;
-  display:flex !important;
-  flex-direction:row !important;
-  align-items:center !important;
-  justify-content:flex-start !important;
-  flex-wrap:nowrap !important;
-  position:relative !important;
-}
-.logo-wrap{
-  position:relative !important;
-  display:flex !important;
-  align-items:center !important;
-  flex:0 0 auto !important;
-  margin:0 28px 0 0 !important;
-}
-.logo{
-  display:block !important;
-  white-space:nowrap !important;
-  line-height:1 !important;
-  font-size:1.15rem !important;
-}
-.links{
-  position:static !important;
-  top:auto !important;
-  left:auto !important;
-  right:auto !important;
-  display:flex !important;
-  flex-direction:row !important;
-  align-items:center !important;
-  justify-content:flex-start !important;
-  flex:1 1 auto !important;
-  width:auto !important;
-  height:64px !important;
-  margin:0 !important;
-  padding:0 !important;
-  gap:0 !important;
-  background:transparent !important;
-  border:0 !important;
-}
-.links a{
-  display:flex !important;
-  align-items:center !important;
-  height:64px !important;
-  padding:0 11px !important;
-  margin:0 !important;
-  white-space:nowrap !important;
-  font-size:.82rem !important;
-}
-.controls{
-  display:flex !important;
-  flex-direction:row !important;
-  align-items:center !important;
-  flex:0 0 auto !important;
-  margin:0 0 0 12px !important;
-}
-.theme{
-  display:grid !important;
-  width:36px !important;
-  height:36px !important;
-  flex:0 0 36px !important;
-  font-size: 1.1rem;
-}
-.menu{display:none !important}
-.hero{padding-top:104px !important}
-
-@media (max-width:760px){
-  .nav,.navin{height:64px !important}
-  .links{
-    display:none !important;
-    position:absolute !important;
-    top:64px !important;
-    left:0 !important;
-    right:0 !important;
-    width:100% !important;
-    height:auto !important;
-    flex-direction:column !important;
-    align-items:stretch !important;
-    padding:10px 18px 18px !important;
-    margin:0 !important;
-    background:var(--bg) !important;
-    border-bottom:1px solid var(--line) !important;
-  }
-  .links.open{display:flex !important}
-  .links a{
-    height:auto !important;
-    justify-content:center !important;
-    padding:10px !important;
-  }
-  .menu{display:grid !important}
-  .hero{padding-top:100px !important}
-}
-
-.nav{position:fixed!important;top:0!important;left:0!important;right:0!important;height:64px!important;z-index:1000!important}
-.navin{height:64px!important;display:flex!important;align-items:center!important;justify-content:flex-start!important;flex-direction:row!important;flex-wrap:nowrap!important;gap:0!important}
-.logo-wrap{position:relative!important;display:flex!important;align-items:center!important;flex:0 0 auto!important;margin:0 26px 0 0!important}
-.logo{display:block!important;white-space:nowrap!important;font-size:1.15rem!important;line-height:1!important}
-.links{position:static!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;width:auto!important;height:64px!important;flex:1 1 auto!important;margin:0!important;padding:0!important;gap:0!important;background:transparent!important;border:0!important}
-.links a{display:flex!important;align-items:center!important;height:64px!important;white-space:nowrap!important;padding:0 10px!important;margin:0!important;font-size:.82rem!important}
-.controls{display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;margin-left:12px!important}
-.theme{display:grid!important;place-items:center!important;width:36px!important;height:36px!important}
-.menu{display:none!important}
-.hero{padding-top:104px!important}
-
 @media (max-width:760px){
  .nav,.navin{height:64px!important}
- .links{display:none!important;position:absolute!important;top:64px!important;left:0!important;right:0!important;width:100%!important;height:auto!important;flex-direction:column!important;align-items:stretch!important;padding:10px 18px 18px!important;margin:0!important;background:var(--bg)!important;border-bottom:1px solid var(--line)!important}
+ .links{
+  display:none!important;
+  position:absolute!important;
+  top:64px!important;
+  left:0!important;
+  right:0!important;
+  width:100%!important;
+  height:auto!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  padding:10px 18px 18px!important;
+  margin:0!important;
+  background:var(--bg)!important;
+  border-bottom:1px solid var(--line)!important;
+ }
  .links.open{display:flex!important}
- .links a{height:auto!important;justify-content:center!important;padding:10px!important}
+ .links a{height:auto!important;justify-content:center!important;padding:10px!important;font-size:.9rem!important}
  .menu{display:grid!important}
+ .hero{padding-top:100px!important}
 }
-
-.popup-text .risk-x {
-  position: relative;
-  display: inline-block;
-  padding: 0 3px;
+@media (max-width:520px){
+ .container{width:min(var(--max),calc(100% - 28px))}
+ section{padding:75px 0}
+ .visual-card img, .visual-card .img-placeholder{height:280px}
+ .references,.partners{grid-template-columns:1fr}
+ .footer-in{align-items:flex-start;flex-direction:column}
 }
-
-.popup-text .risk-x .x1,
-.popup-text .risk-x .x2 {
-  position: absolute;
-  left: -2px;
-  top: 50%;
-  width: calc(100% + 4px);
-  height: 1.5px;
-  background: #ef4444;
-  opacity: 0.8;
-  border-radius: 1px;
-  pointer-events: none;
-  display: block;
-}
-
-.popup-text .risk-x .x1 { transform: translateY(-50%) rotate(22deg); }
-.popup-text .risk-x .x2 { transform: translateY(-50%) rotate(-22deg); }
 </style>
 </head>
 <body>
+
 <header class="nav">
   <div class="container navin">
     <div class="logo-wrap" id="logoWrap">
@@ -433,16 +274,10 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
         <div class="popup-title">SolRixIS</div>
         <div class="popup-line"></div>
         <div class="popup-text">
-  <div><span class="highlight">SOL</span>ution</div>
-  <div>
-    <span class="risk-x">
-      <span class="highlight">RI</span>sk
-      <span class="x1"></span>
-      <span class="x2"></span>
-    </span>
-  </div>
-  <div><span class="highlight"><b>I</b></span>n<span class="highlight"><b>S</b></span>urance</div>
-</div>
+          <div><span class="highlight">SOL</span>ution</div>
+          <div><span class="highlight"><b style="color: red;">No</b> RISK</span></div>
+          <div>Analys<span class="highlight"><b>IS</b></span></div>
+        </div>
       </div>
     </div>
     <nav class="links" id="links">
@@ -454,99 +289,253 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
       <a href="#contact">Contact</a>
     </nav>
     <div class="controls">
-      <button class="theme" id="theme" aria-label="Toggle light and dark mode"></button>
+      <button class="theme" id="theme" aria-label="Toggle light and dark mode">☾</button>
       <button class="menu" id="menu" aria-label="Open menu">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
 </header>
+
 <main id="home">
-<section class="hero"><div class="container hero-grid"><div>
-<div class="eyebrow">IT solutions without risk</div><h1>Technology that <span>works for you.</span></h1>
-<p class="lead">SolRixIS helps organizations solve complex IT problems through development, support, analysis, workflow optimization and reliable long-term solutions.</p>
-<div class="buttons"><a class="btn primary" href="#contact">Start a conversation <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a><a class="btn ghost" href="#services">Explore services</a></div>
-</div><div class="visual reveal"><div class="visual-card"><img src="SolRixIS_files/development.svg" alt="Software development"><div class="visual-meta"><strong>Development &amp; optimization</strong><small>SolRixIS</small></div></div><div class="glow"></div></div></div></section>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">IT solutions without risk</div>
+      <h1>Technology that <span>works for you.</span></h1>
+      <p class="lead">SolRixIS helps organizations solve complex IT problems through development, support, analysis, workflow optimization and reliable long-term solutions.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#contact">Start a conversation <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        <a class="btn ghost" href="#services">Explore services</a>
+      </div>
+    </div>
+    <div class="visual reveal">
+      <div class="visual-card">
+        <img src="SolRixIS_files/development.svg" alt="Software development" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="img-placeholder" style="display:none; color:var(--brand); font-weight:700;">Development &amp; Optimization</div>
+        <div class="visual-meta"><strong>Development &amp; optimization</strong><small>SolRixIS</small></div>
+      </div>
+      <div class="glow"></div>
+    </div>
+  </div>
+</section>
 
-<section id="services"><div class="container"><div class="head reveal"><div class="kicker">What we offer</div><h2>Practical IT expertise, from code to infrastructure.</h2><p>Services built around the original SolRixIS offering, presented in a cleaner and more focused way.</p></div>
-<div class="services">
-<article class="service reveal"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg></div><h3>Analysis &amp; problem management</h3><p>Problem and program analysis, incident management, system speed-up, workflow and source-code optimization, and issue resolution.</p></article>
-<article class="service reveal"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></div><h3>Software &amp; workflow development</h3><p>Software developed around your needs, with a focus on quality, performance and optimized workflows.</p></article>
-<article class="service reveal"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg></div><h3>Document &amp; data management</h3><p>Solutions for large document collections, complex user rights, databases and structured information management.</p></article>
-<article class="service reveal"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="6" rx="1.5"/><rect x="4" y="14" width="16" height="6" rx="1.5"/><path d="M8 7h.01M8 17h.01"/></svg></div><h3>Application &amp; server support</h3><p>End-user to server support on a monthly or project basis, including mail systems, application and web servers and migrations.</p></article>
-<article class="service reveal"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18 3 21l1-5A8 8 0 1 1 7 19z"/><path d="M8 10h8M8 14h5"/></svg></div><h3>Consultation</h3><p>Independent IT guidance to identify practical solutions for corporate technology challenges.</p></article>
-<article class="service reveal"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.2 8.5-8 10-4.8-1.5-8-5-8-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></div><h3>Zero risk</h3><p>SolRixIS backs its services and software solutions with a lifetime guarantee, including systems analyzed or modified by its technicians.</p></article>
-</div></div></section>
+<section id="services">
+  <div class="container">
+    <div class="head reveal">
+      <div class="kicker">What we offer</div>
+      <h2>Practical IT expertise, from code to infrastructure.</h2>
+      <p>Services built around the original SolRixIS offering, presented in a cleaner and more focused way.</p>
+    </div>
+    <div class="services">
+      <article class="service reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg></div>
+        <h3>Analysis &amp; problem management</h3>
+        <p>Problem and program analysis, incident management, system speed-up, workflow and source-code optimization, and issue resolution.</p>
+      </article>
+      <article class="service reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></div>
+        <h3>Software &amp; workflow development</h3>
+        <p>Software developed around your needs, with a focus on quality, performance and optimized workflows.</p>
+      </article>
+      <article class="service reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg></div>
+        <h3>Document &amp; data management</h3>
+        <p>Solutions for large document collections, complex user rights, databases and structured information management.</p>
+      </article>
+      <article class="service reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="6" rx="1.5"/><rect x="4" y="14" width="16" height="6" rx="1.5"/><path d="M8 7h.01M8 17h.01"/></svg></div>
+        <h3>Application &amp; server support</h3>
+        <p>End-user to server support on a monthly or project basis, including mail systems, application and web servers and migrations.</p>
+      </article>
+      <article class="service reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18 3 21l1-5A8 8 0 1 1 7 19z"/><path d="M8 10h8M8 14h5"/></svg></div>
+        <h3>Consultation</h3>
+        <p>Independent IT guidance to identify practical solutions for corporate technology challenges.</p>
+      </article>
+      <article class="service reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.2 8.5-8 10-4.8-1.5-8-5-8-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></div>
+        <h3>Zero risk</h3>
+        <p>SolRixIS backs its services and software solutions with a lifetime guarantee, including systems analyzed or modified by its technicians.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-<section id="solutions"><div class="container"><div class="head reveal"><div class="kicker">Solutions</div><h2>Focused capabilities for real-world IT environments.</h2></div>
-<div class="solutions">
-<article class="solution reveal"><div class="solution-top"><h3>Application Development</h3><p>Build, improve and outsource software work.</p></div><ul class="features"><li>Workflow</li><li>Analysis</li><li>Optimization</li><li>User experience</li><li>Outsource</li></ul></article>
-<article class="solution reveal"><div class="solution-top"><h3>Support</h3><p>Keep applications and infrastructure reliable.</p></div><ul class="features"><li>Fast response</li><li>Analysis</li><li>Bugfix</li><li>Migration</li><li>Prevention</li><li>Outsource</li></ul></article>
-<article class="solution reveal"><div class="solution-top"><h3>Technologies</h3><p>Experience across established enterprise technologies.</p></div><ul class="features"><li>Java</li><li>Domino / Notes</li><li>SAP</li><li>SQL / relational databases</li><li>HTML</li><li>Bootstrap</li></ul></article>
-</div></div></section>
+<section id="solutions">
+  <div class="container">
+    <div class="head reveal">
+      <div class="kicker">Solutions</div>
+      <h2>Focused capabilities for real-world IT environments.</h2>
+    </div>
+    <div class="solutions">
+      <article class="solution reveal">
+        <div class="solution-top">
+          <h3>Application Development</h3>
+          <p>Build, improve and outsource software work.</p>
+        </div>
+        <ul class="features">
+          <li>Workflow</li>
+          <li>Analysis</li>
+          <li>Optimization</li>
+          <li>User experience</li>
+          <li>Outsource</li>
+        </ul>
+      </article>
+      <article class="solution reveal">
+        <div class="solution-top">
+          <h3>Support</h3>
+          <p>Keep applications and infrastructure reliable.</p>
+        </div>
+        <ul class="features">
+          <li>Fast response</li>
+          <li>Analysis</li>
+          <li>Bugfix</li>
+          <li>Migration</li>
+          <li>Prevention</li>
+          <li>Outsource</li>
+        </ul>
+      </article>
+      <article class="solution reveal">
+        <div class="solution-top">
+          <h3>Technologies</h3>
+          <p>Experience across established enterprise technologies.</p>
+        </div>
+        <ul class="features">
+          <li>Java</li>
+          <li>Domino / Notes</li>
+          <li>SAP</li>
+          <li>SQL / relational databases</li>
+          <li>HTML</li>
+          <li>Bootstrap</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
 
-<section id="references"><div class="container"><div class="head reveal"><div class="kicker">References</div><h2>Trusted by organizations across different industries.</h2></div>
-<div class="references">
-<a class="ref reveal" href="http://www.alterdomus.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/alterdomus_logo.gif" alt="Alter Domus"></a>
-<a class="ref reveal" href="http://www.centralbankbahamas.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/cbob_logo.png" alt="Central Bank of The Bahamas"></a>
-<a class="ref reveal" href="http://www.nn.hu/" target="_blank" rel="noopener"><img src="SolRixIS_files/nn_logo.png" alt="NN Insurance"></a>
-<a class="ref reveal" href="http://www.amhusa.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/amh_logo.png" alt="AMH"></a>
-<a class="ref reveal" href="http://www.odem.io/" target="_blank" rel="noopener"><img src="SolRixIS_files/odem_logo.svg" alt="Odem"></a>
-<a class="ref reveal" href="http://pimtx.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/pimtx_logo.jpg" alt="PIM"></a>
-<a class="ref reveal" href="http://www.mbmc.at/" target="_blank" rel="noopener"><img src="SolRixIS_files/mbmc_logo.png" alt="MBMC"></a>
-<a class="ref reveal" href="http://www.jadworks.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/jadworks_logo.gif" alt="Jadworks"></a>
-<a class="ref reveal" href="http://www.acquitron.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/acquitron_logo.svg" alt="Acquitron"></a>
-</div></div></section>
+<section id="references">
+  <div class="container">
+    <div class="head reveal">
+      <div class="kicker">References</div>
+      <h2>Trusted by organizations across different industries.</h2>
+    </div>
+    <div class="references">
+      <a class="ref reveal" href="http://www.alterdomus.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/alterdomus_logo.gif" alt="Alter Domus" onerror="this.remove();this.parentNode.innerText='Alter Domus'"></a>
+      <a class="ref reveal" href="http://www.centralbankbahamas.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/cbob_logo.png" alt="Central Bank of The Bahamas" onerror="this.remove();this.parentNode.innerText='Central Bank of The Bahamas'"></a>
+      <a class="ref reveal" href="http://www.nn.hu/" target="_blank" rel="noopener"><img src="SolRixIS_files/nn_logo.png" alt="NN Insurance" onerror="this.remove();this.parentNode.innerText='NN Insurance'"></a>
+      <a class="ref reveal" href="http://www.amhusa.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/amh_logo.png" alt="AMH" onerror="this.remove();this.parentNode.innerText='AMH'"></a>
+      <a class="ref reveal" href="http://www.odem.io/" target="_blank" rel="noopener"><img src="SolRixIS_files/odem_logo.svg" alt="Odem" onerror="this.remove();this.parentNode.innerText='Odem'"></a>
+      <a class="ref reveal" href="http://pimtx.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/pimtx_logo.jpg" alt="PIM" onerror="this.remove();this.parentNode.innerText='PIM'"></a>
+      <a class="ref reveal" href="http://www.mbmc.at/" target="_blank" rel="noopener"><img src="SolRixIS_files/mbmc_logo.png" alt="MBMC" onerror="this.remove();this.parentNode.innerText='MBMC'"></a>
+      <a class="ref reveal" href="http://www.jadworks.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/jadworks_logo.gif" alt="Jadworks" onerror="this.remove();this.parentNode.innerText='Jadworks'"></a>
+      <a class="ref reveal" href="http://www.acquitron.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/acquitron_logo.svg" alt="Acquitron" onerror="this.remove();this.parentNode.innerText='Acquitron'"></a>
+    </div>
+  </div>
+</section>
 
-<section id="partnership"><div class="container"><div class="head reveal"><div class="kicker">Partnership</div><h2>Technology partnerships that extend our capabilities.</h2></div>
-<div class="partners">
-<a class="partner reveal" href="http://www.hcl.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/hcl_bp.png" alt="HCL"></a>
-<a class="partner reveal" href="http://www.delltechnologies.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/DT_AuthorizedPartner_4C.png" alt="Dell Technologies"></a>
-</div></div></section>
+<section id="partnership">
+  <div class="container">
+    <div class="head reveal">
+      <div class="kicker">Partnership</div>
+      <h2>Technology partnerships that extend our capabilities.</h2>
+    </div>
+    <div class="partners">
+      <a class="partner reveal" href="http://www.hcl.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/hcl_bp.png" alt="HCL" onerror="this.remove();this.parentNode.innerText='HCL Business Partner'"></a>
+      <a class="partner reveal" href="http://www.delltechnologies.com/" target="_blank" rel="noopener"><img src="SolRixIS_files/DT_AuthorizedPartner_4C.png" alt="Dell Technologies" onerror="this.remove();this.parentNode.innerText='Dell Technologies Partner'"></a>
+    </div>
+  </div>
+</section>
 
-<section id="contact"><div class="container"><div class="contact">
-<div class="contact-card reveal"><div class="kicker">Contact</div><h2>Let's solve your IT challenge.</h2><p>We are happy to answer your questions. Contact SolRixIS directly to discuss development, support, analysis or your next IT project.</p><a class="btn primary" href="mailto:robert@solrixis.com?subject=Contact%20SolRixIS">Email SolRixIS <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></a></div>
-<div class="contact-card reveal"><div class="kicker">Direct contact</div><h3>Email</h3><a class="mail" href="mailto:robert@solrixis.com?subject=contact">robert@solrixis.com</a><p>Software solutions are delivered with SolRixIS's lifetime guarantee.</p><a class="btn ghost" href="#home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg> Back to top</a></div>
-</div></div></section>
+<section id="contact">
+  <div class="container">
+    <div class="contact">
+      <div class="contact-card reveal">
+        <div class="kicker">Contact</div>
+        <h2>Let's solve your IT challenge.</h2>
+        <p>We are happy to answer your questions. Contact SolRixIS directly to discuss development, support, analysis or your next IT project.</p>
+        <a class="btn primary" href="mailto:robert@solrixis.com?subject=Contact%20SolRixIS">Email SolRixIS <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></a>
+      </div>
+      <div class="contact-card reveal">
+        <div class="kicker">Direct contact</div>
+        <h3>Email</h3>
+        <a class="mail" href="mailto:robert@solrixis.com?subject=contact">robert@solrixis.com</a>
+        <p>Software solutions are delivered with SolRixIS's lifetime guarantee.</p>
+        <a class="btn ghost" href="#home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg> Back to top</a>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
-<footer><div class="container footer-in"><div><div class="logo">SolRix<span>IS</span></div><div class="copyright"><span id="copyright"></span></div></div>
-<div class="tech" aria-label="Technologies">Java · JavaScript · HTML · CSS · Bootstrap · SQL · Servers · Linux · Windows</div></div></footer>
+
+<footer>
+  <div class="container footer-in">
+    <div>
+      <div class="logo">SolRix<span>IS</span></div>
+      <div class="copyright"><span id="copyright"></span></div>
+    </div>
+    <div class="tech" aria-label="Technologies">Java · JavaScript · HTML · CSS · Bootstrap · SQL · Servers · Linux · Windows</div>
+  </div>
+</footer>
+
 <script>
 (function(){
- const root=document.documentElement,btn=document.getElementById('theme'),menu=document.getElementById('menu'),links=document.getElementById('links');
- const saved=localStorage.getItem('solrixis-theme');
- const prefers=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
- function setTheme(theme){
-   root.setAttribute('data-theme',theme);
-   btn.innerHTML=theme==='dark' ? '☀️' : '☾';
-   localStorage.setItem('solrixis-theme',theme);
- }
- setTheme(saved || (prefers?'dark':'light'));
- btn.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark'));
- menu.addEventListener('click',()=>links.classList.toggle('open'));
- links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
- const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
- document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  const root = document.documentElement;
+  const btn = document.getElementById('theme');
+  const menu = document.getElementById('menu');
+  const links = document.getElementById('links');
+  
+  const saved = localStorage.getItem('solrixis-theme');
+  const prefers = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  function setTheme(theme){
+    root.setAttribute('data-theme', theme);
+    btn.innerHTML = theme === 'dark' ? '☀️' : '☾';
+    localStorage.setItem('solrixis-theme', theme);
+  }
+  
+  setTheme(saved || (prefers ? 'dark' : 'light'));
+  
+  btn.addEventListener('click', () => {
+    setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
 
- const logoWrap = document.getElementById('logoWrap');
- if (logoWrap) {
-   logoWrap.addEventListener('click', function(e) {
-     if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-       if (!logoWrap.classList.contains('active')) {
-         e.preventDefault();
-         logoWrap.classList.add('active');
-       }
-     }
-   });
+  menu.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 
-   document.addEventListener('click', function(e) {
-     if (!logoWrap.contains(e.target)) {
-       logoWrap.classList.remove('active');
-     }
-   });
- }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('show');
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const logoWrap = document.getElementById('logoWrap');
+  if (logoWrap) {
+    logoWrap.addEventListener('click', function(e) {
+      if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        if (!logoWrap.classList.contains('active')) {
+          e.preventDefault();
+          logoWrap.classList.add('active');
+        }
+      }
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!logoWrap.contains(e.target)) {
+        logoWrap.classList.remove('active');
+      }
+    });
+  }
+
+  const copyright = document.getElementById('copyright');
+  if (copyright) {
+    const host = window.location.hostname ? window.location.hostname.replace(/^www\./, '') : 'SolRixIS';
+    const year = new Date().getFullYear();
+    copyright.textContent = host + ' © ' + year + ' — All rights reserved';
+  }
 })();
-
-const copyright=document.getElementById('copyright'); if(copyright) copyright.textContent=window.location.hostname.replace(/^www\./,'')+' — All rights reserved';
 </script>
-</body></html>
+</body>
+</html>
