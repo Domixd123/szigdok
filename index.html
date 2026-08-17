@@ -61,7 +61,58 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
 
 .logo-wrap{position:relative;display:inline-block}.logo-popup{position:absolute;top:calc(100% + 14px);left:0;width:240px;padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.97);transition:.2s ease;pointer-events:none;z-index:200}.logo-popup:before{content:"";position:absolute;top:-7px;left:24px;width:13px;height:13px;background:var(--surface);border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}.logo-wrap:hover .logo-popup{opacity:1;visibility:visible;transform:translateY(0) scale(1)}.popup-title{font-size:1rem;font-weight:800;color:var(--text);margin-bottom:8px}.popup-line{height:1px;background:var(--line);margin-bottom:10px}.popup-text{color:var(--muted);font-size:.9rem;line-height:1.7}.popup-text span{color:var(--brand);font-weight:800}
 .popup-text .is-abbr{font-size:1.25rem;font-weight:900;display:inline-block;line-height:1;color:var(--brand)}
-.popup-text .is-abbr{display:inline-flex;gap:0;margin-right:1px;line-height:1}.popup-text .is-abbr b{font-size:1.3rem;font-weight:900;color:var(--brand);line-height:1}
+.popup-text .is-abbr{display:inline-flex;gap:0;margin-right:1px;line-height:1}.popup-text .is-abbr{display:inline-flex;align-items:baseline;gap:0}.popup-text .is-abbr b{font-size:1.3rem;font-weight:900;color:var(--brand);line-height:1}
+
+/* NAVBAR FIX */
+.navin{
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+  flex-wrap:nowrap;
+}
+.logo-wrap{flex:0 0 auto}
+.links{
+  display:flex;
+  flex:0 0 auto;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  margin-left:auto;
+  margin-right:12px;
+}
+.controls{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex:0 0 auto;
+}
+.menu{display:none}
+.hero{padding-top:125px}
+
+/* Keep the mobile layout only on genuinely narrow screens. */
+@media (max-width:850px){
+  .navin{height:76px;flex-wrap:nowrap}
+  .links{
+    display:none;
+    position:absolute;
+    top:76px;
+    left:0;
+    right:0;
+    margin:0;
+    padding:12px 20px 20px;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .links.open{display:flex}
+  .links a{text-align:center}
+  .menu{display:grid}
+  .hero{padding-top:115px}
+}
+
 </style>
 </head>
 <body>
@@ -73,9 +124,10 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
   <div class="popup-line"></div>
   <div class="popup-text">
     <div><span>SOL</span>ution</div>
-    <div><span>RI</span>sk</div>
-    <div><span class="is-abbr"><b>I</b>n<b>S</b></span>urance</div>
+    <div><span>R</span>isk</div>
+    <div><span class="is-abbr"><b>I</b></span>n<span class="is-abbr"><b>S</b>urance</span></div>
   </div>
+</div>
 </div>
 </div>
 </div>
