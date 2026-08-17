@@ -114,7 +114,13 @@ footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted)}.foote
 <div class="contact-card reveal"><div class="kicker">Direct contact</div><h3>Email</h3><a class="mail" href="mailto:robert@solrixis.com?subject=Contact%20SolRixIS">robert@solrixis.com</a><p>Software solutions are delivered with SolRixIS's lifetime guarantee.</p><a class="btn ghost" href="#home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg> Back to top</a></div>
 </div></div></section>
 </main>
-<footer><div class="container footer-in"><div><div class="logo">SolRix<span>IS</span></div><div class="copyright">Solrixis.com — All rights reserved</div></div>
+<footer><div class="container footer-in"><div><div class="logo">SolRix<span>IS</span></div><div class="copyright" id="copyright"></div>
+
+<script>
+const domain = window.location.hostname.replace(/^www\./, "");
+document.getElementById("copyright").textContent =
+    domain + " — All rights reserved";
+</script></div>
 <div class="tech" aria-label="Technologies">Java · JavaScript · HTML · CSS · Bootstrap · SQL · Servers · Linux · Windows</div></div></footer>
 <script>
 (function(){
